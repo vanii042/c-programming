@@ -1,0 +1,8 @@
+#include <stdio.h>
+void try_to_change(int x) { x = 100; }
+int main(void) {
+    int n=10;
+    try_to_change(n);
+    printf("n remains %d because C passes arguments by value.\n", n);
+    return 0;
+}
