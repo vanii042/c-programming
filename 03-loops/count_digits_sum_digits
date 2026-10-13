@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(void) {
+    long long n, x;
+    int count=0, sum=0;
+    printf("Enter an integer: ");
+    if (scanf("%lld", &n) != 1) return 1;
+    x = n < 0 ? -n : n;
+    do { int d=(int)(x%10); count++; sum+=d; x/=10; } while (x!=0);
+    printf("Digit count = %d\nSum of digits = %d\n", count, sum);
+    return 0;
+}
