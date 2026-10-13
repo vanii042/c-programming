@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <ctype.h>
+int main(void) {
+    char ch;
+    printf("Enter an alphabet: ");
+    if (scanf(" %c", &ch) != 1) return 1;
+    ch = (char)tolower((unsigned char)ch);
+    if (ch < 'a' || ch > 'z') puts("Input is not an alphabet");
+    else if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') puts("Vowel");
+    else puts("Consonant");
+    return 0;
+}
