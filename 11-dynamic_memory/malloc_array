@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+    int n;
+    printf("Enter array size (1-1000): ");
+    if(scanf("%d",&n)!=1||n<1||n>1000) return 1;
+    int *a=malloc((size_t)n*sizeof *a);
+    if(!a){puts("Memory allocation failed.");return 1;}
+    printf("Enter %d integers: ",n);
+    for(int i=0;i<n;i++) if(scanf("%d",&a[i])!=1){free(a);return 1;}
+    printf("Values: ");
+    for(int i=0;i<n;i++) printf("%d ",a[i]);
+    putchar('\n');
+    free(a);
+    return 0;
+}
