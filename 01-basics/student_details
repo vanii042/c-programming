@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(void) {
+    char name[100];
+    int roll;
+    printf("Enter your name: ");
+    scanf(" %99[^\n]", name);
+    printf("Enter roll number: ");
+    scanf("%d", &roll);
+    printf("Name: %s\nRoll number: %d\n", name, roll);
+    return 0;
+}
