@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define MAX 100
+int main(void) {
+    int q[MAX],front=0,rear=0,choice,value;
+    do {
+        printf("\n1.Enqueue 2.Dequeue 3.Display 0.Exit: ");
+        if(scanf("%d",&choice)!=1) return 1;
+        if(choice==1) {
+            if(rear==MAX) puts("Queue full (simple linear queue)");
+            else {printf("Value: ");if(scanf("%d",&value)!=1)return 1;q[rear++]=value;}
+        } else if(choice==2) {
+            if(front==rear) puts("Queue is empty"); else printf("Removed: %d\n",q[front++]);
+            if(front==rear) front=rear=0;
+        } else if(choice==3) {
+            if(front==rear) puts("Queue is empty");
+            else {for(int i=front;i<rear;i++)printf("%d ",q[i]);putchar('\n');}
+        } else if(choice!=0) puts("Invalid choice");
+    } while(choice!=0);
+    return 0;
+}
