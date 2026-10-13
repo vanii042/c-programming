@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node { int data; struct Node *next; };
+int main(void) {
+    struct Node *head=NULL,*tail=NULL;
+    int n,value;
+    printf("How many nodes (0-100): ");
+    if(scanf("%d",&n)!=1||n<0||n>100) return 1;
+    for(int i=0;i<n;i++) {
+        printf("Value for node %d: ",i+1);
+        if(scanf("%d",&value)!=1) return 1;
+        struct Node *node=malloc(sizeof *node);
+        if(!node){puts("Allocation failed.");return 1;}
+        node->data=value; node->next=NULL;
+        if(!head) head=node; else tail->next=node;
+        tail=node;
+    }
+    printf("List: ");
+    for(struct Node *p=head;p;p=p->next) printf("%d -> ",p->data);
+    puts("NULL");
+    while(head){struct Node *next=head->next;free(head);head=next;}
+    return 0;
+}
