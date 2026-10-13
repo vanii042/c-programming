@@ -1,0 +1,9 @@
+#include <stdio.h>
+struct Student { char name[80]; int roll; float marks; };
+int main(void) {
+    struct Student s;
+    printf("Enter name (one word), roll number and marks: ");
+    if(scanf("%79s %d %f",s.name,&s.roll,&s.marks)!=3) return 1;
+    printf("Name: %s\nRoll: %d\nMarks: %.2f\n",s.name,s.roll,s.marks);
+    return 0;
+}
