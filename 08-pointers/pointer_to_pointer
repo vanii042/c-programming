@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(void) {
+    int value=42;
+    int *p=&value;
+    int **pp=&p;
+    printf("Value = %d\n",**pp);
+    return 0;
+}
