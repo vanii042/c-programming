@@ -1,1 +1,12 @@
+#include <stdio.h>
+int main(void) {
+    int r,c,a[10][10];
+    printf("Enter rows and columns (1-10): ");
+    if(scanf("%d %d",&r,&c)!=2||r<1||r>10||c<1||c>10) return 1;
+    printf("Enter matrix elements: ");
+    for(int i=0;i<r;i++) for(int j=0;j<c;j++) if(scanf("%d",&a[i][j])!=1) return 1;
+    puts("Transpose:");
+    for(int j=0;j<c;j++){for(int i=0;i<r;i++)printf("%d ",a[i][j]);putchar('\n');}
+    return 0;
+}
 
