@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(void) {
+    FILE *fp=fopen("notes.txt","a");
+    if(!fp){perror("notes.txt");return 1;}
+    fputs("New line added by C program.\n",fp);
+    fclose(fp);
+    puts("Text appended to notes.txt");
+    return 0;
+}
