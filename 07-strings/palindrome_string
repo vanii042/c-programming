@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main(void) {
+    char s[200]; size_t left=0,right;
+    printf("Enter a line: ");
+    if(!fgets(s,sizeof s,stdin)) return 1;
+    right=strcspn(s,"\n"); s[right]='\0';
+    if(right>0) right--;
+    while(left<right) {
+        while(left<right && !isalnum((unsigned char)s[left])) left++;
+        while(left<right && !isalnum((unsigned char)s[right])) right--;
+        if(tolower((unsigned char)s[left])!=tolower((unsigned char)s[right])) {
+            puts("Not a palindrome"); return 0;
+        }
+        left++; if(right>0) right--;
+    }
+    puts("Palindrome");
+    return 0;
+}
