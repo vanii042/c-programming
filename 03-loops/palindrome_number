@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(void) {
+    int n;
+    long long x, rev=0;
+    printf("Enter a non-negative integer: ");
+    if (scanf("%d", &n) != 1 || n < 0) return 1;
+    x=n;
+    do { rev = rev*10 + x%10; x/=10; } while (x != 0);
+    puts(rev == n ? "Palindrome number" : "Not a palindrome number");
+    return 0;
+}
