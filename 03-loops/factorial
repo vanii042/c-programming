@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(void) {
+    int n;
+    unsigned long long fact = 1;
+    printf("Enter n (0 to 20): ");
+    if (scanf("%d", &n) != 1 || n < 0 || n > 20) {
+        puts("Please enter a number from 0 to 20.");
+        return 1;
+    }
+    for (int i=2; i<=n; i++) fact *= (unsigned long long)i;
+    printf("%d! = %llu\n", n, fact);
+    return 0;
+}
