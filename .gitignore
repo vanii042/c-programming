@@ -1,0 +1,14 @@
+# Compiled C programs
+*.exe
+*.out
+*.o
+*.obj
+
+# IDE/editor files
+.vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
