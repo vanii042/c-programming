@@ -1,0 +1,12 @@
+#include <stdio.h>
+unsigned long long factorial(int n) {
+    if (n<=1) return 1;
+    return (unsigned long long)n * factorial(n-1);
+}
+int main(void) {
+    int n;
+    printf("Enter n (0 to 20): ");
+    if (scanf("%d", &n) != 1 || n<0 || n>20) return 1;
+    printf("Factorial = %llu\n", factorial(n));
+    return 0;
+}
