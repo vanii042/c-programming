@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(void) {
+    int n,a[100],key,low=0,high,mid,found=-1;
+    printf("Enter sorted array size (1-100): ");
+    if(scanf("%d",&n)!=1||n<1||n>100) return 1;
+    printf("Enter elements in ascending order: ");
+    for(int i=0;i<n;i++) if(scanf("%d",&a[i])!=1) return 1;
+    printf("Enter value to find: ");
+    if(scanf("%d",&key)!=1) return 1;
+    high=n-1;
+    while(low<=high) {
+        mid=low+(high-low)/2;
+        if(a[mid]==key){found=mid;break;}
+        if(a[mid]<key) low=mid+1; else high=mid-1;
+    }
+    if(found>=0) printf("Found at index %d\n",found); else puts("Not found");
+    return 0;
+}
