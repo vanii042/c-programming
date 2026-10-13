@@ -1,0 +1,9 @@
+#include <stdio.h>
+struct ExampleStruct { int i; float f; char c; };
+union ExampleUnion { int i; float f; char c; };
+int main(void) {
+    printf("Size of structure = %zu bytes\n",sizeof(struct ExampleStruct));
+    printf("Size of union = %zu bytes\n",sizeof(union ExampleUnion));
+    puts("A structure allocates storage for each member; a union shares storage.");
+    return 0;
+}
