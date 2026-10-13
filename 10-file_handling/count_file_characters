@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(void) {
+    FILE *fp=fopen("sample.txt","r");
+    if(!fp){perror("sample.txt");return 1;}
+    long count=0; int ch;
+    while((ch=fgetc(fp))!=EOF) count++;
+    fclose(fp);
+    printf("Character/byte count = %ld\n",count);
+    return 0;
+}
