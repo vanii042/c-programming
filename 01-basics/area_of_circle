@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(void) {
+    double radius;
+    const double PI = 3.141592653589793;
+    printf("Enter radius: ");
+    if (scanf("%lf", &radius) != 1 || radius < 0) {
+        printf("Please enter a non-negative radius.\n");
+        return 1;
+    }
+    printf("Area = %.2f\n", PI * radius * radius);
+    return 0;
+}
