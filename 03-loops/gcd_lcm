@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(void) {
+    long long a,b,x,y,t,gcd,lcm;
+    printf("Enter two non-negative integers: ");
+    if (scanf("%lld %lld", &a, &b) != 2 || a < 0 || b < 0) return 1;
+    x=a; y=b;
+    while (y != 0) { t=x%y; x=y; y=t; }
+    gcd=x;
+    lcm = (gcd == 0) ? 0 : (a/gcd)*b;
+    printf("GCD = %lld\nLCM = %lld\n", gcd, lcm);
+    return 0;
+}
